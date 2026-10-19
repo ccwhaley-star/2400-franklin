@@ -6,7 +6,7 @@ hosted on Netlify.
 
 | | |
 |---|---|
-| Netlify site | `2400-franklin` (id `0175550f-254b-42df-ae4b-75dea2f64c8c`), https://2400-franklin.netlify.app |
+| Netlify site | `2400-franklin` (id `0175550f-254b-42df-ae4b-75dea2f64c8c`), https://2400-franklin.netlify.app, git-linked to github.com/ccwhaley-star/2400-franklin (push to `main` deploys) |
 | Production domain | https://2400franklin.com (www and 2400franklinrd.com redirect to it, see `netlify.toml`) |
 | Inquiries | Netlify Forms, form name `inquiry`, delivered to leasing@2400franklin.com |
 | Design | Option D of the mockups in `../2400-franklin-mockups/` (dark "Shop Floor" + floor plan + site map) |
@@ -35,7 +35,7 @@ note, the terms table, the existing-businesses row). Commit `index.html` and dep
 netlify deploy --prod --no-build --dir=C:/Github_folder/2400-franklin --site 0175550f-254b-42df-ae4b-75dea2f64c8c
 ```
 
-Always pass `--site` and `--dir` explicitly. Netlify does not build anything; it publishes the folder.
+The site is git-linked: pushing to `main` deploys automatically. The CLI command above is the manual fallback; always pass `--site` and `--dir` explicitly. Netlify does not build anything; it publishes the folder.
 
 ## Point the domain (GoDaddy → Netlify)
 

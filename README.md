@@ -7,7 +7,7 @@ hosted on Netlify.
 | | |
 |---|---|
 | Netlify site | `2400-franklin` (id `0175550f-254b-42df-ae4b-75dea2f64c8c`), https://2400-franklin.netlify.app, git-linked to github.com/ccwhaley-star/2400-franklin (push to `main` deploys) |
-| Production domain | https://2400franklin.com (www and 2400franklinrd.com redirect to it, see `netlify.toml`) |
+| Production domain | https://2400franklin.com (attached to the Netlify site; DNS records still to be added at Cloudflare; www and 2400franklinrd.com redirect to it, see `netlify.toml`) |
 | Inquiries | Netlify Forms, form name `inquiry`, delivered to leasing@2400franklin.com |
 | Design | Option D of the mockups in `../2400-franklin-mockups/` (dark "Shop Floor" + floor plan + site map) |
 
@@ -37,23 +37,30 @@ netlify deploy --prod --no-build --dir=C:/Github_folder/2400-franklin --site 017
 
 The site is git-linked: pushing to `main` deploys automatically. The CLI command above is the manual fallback; always pass `--site` and `--dir` explicitly. Netlify does not build anything; it publishes the folder.
 
-## Point the domain (GoDaddy → Netlify)
+## Point the domain (Cloudflare → Netlify)
 
-1. Register **2400franklin.com** and **2400franklinrd.com** (neither was registered as of 2026-10-18).
-2. Netlify → this site → **Domain management** → add `2400franklin.com`, `www.2400franklin.com`,
-   `2400franklinrd.com` and `www.2400franklinrd.com`. Set `2400franklin.com` as the primary domain.
-3. At GoDaddy, for **each** of the two domains, set DNS to:
+2400franklin.com was registered at **Cloudflare** on 2026-10-18 (nameservers vin/wren.ns.cloudflare.com).
+The Netlify site already has `2400franklin.com` as its primary domain and `www.2400franklin.com` as an alias.
 
-   | Type | Name | Value |
-   |---|---|---|
-   | A | `@` | `75.2.60.5` |
-   | CNAME | `www` | `2400-franklin.netlify.app` |
+1. Cloudflare → 2400franklin.com → **DNS → Records**, add (proxy status **DNS only**, grey cloud, on both):
 
-   Delete GoDaddy's default parked A record and any "Forwarding" on the domain first.
-   (Alternative: move nameservers to Netlify DNS, `dns1.p0X.nsone.net` etc., shown in Netlify when
-   you add the domain. Either works; the A/CNAME route keeps the domain fully at GoDaddy.)
-4. Netlify issues the Let's Encrypt certificate itself once DNS resolves (usually under an hour).
-   HTTPS and the www → apex and 2400franklinrd → 2400franklin redirects are already in `netlify.toml`.
+   | Type | Name | Content | Proxy |
+   |---|---|---|---|
+   | A | `@` | `75.2.60.5` | DNS only |
+   | CNAME | `www` | `2400-franklin.netlify.app` | DNS only |
+
+   Keep the records **DNS only**. With the orange-cloud proxy on, Netlify cannot issue the
+   certificate and visitors get Cloudflare/Netlify errors.
+2. Cloudflare → **SSL/TLS** → set the mode to **Full** (harmless with DNS-only records, and avoids
+   redirect loops if the proxy is ever switched on).
+3. Netlify → Domain management → **Verify DNS configuration**, then **Provision certificate** if it has
+   not done so on its own (usually within an hour of the records resolving). HTTPS, the www → apex
+   redirect and the 2400franklinrd.com redirect are already in `netlify.toml`.
+4. **2400franklinrd.com** (not registered yet): register it at Cloudflare too, add the same two records,
+   and add `2400franklinrd.com` + `www.2400franklinrd.com` as domain aliases on the Netlify site.
+
+Until step 1 is done, 2400franklin.com does not resolve at all; after it, a Netlify "Not found" page
+means the domain is not attached to the site (it is), and a certificate warning means step 3 is pending.
 
 ## Form delivery
 
@@ -84,7 +91,7 @@ The frontage rendering has its tenant-sign panels blanked; regenerate it before 
 
 ## Launch checklist (owner)
 
-- [ ] Register 2400franklin.com and 2400franklinrd.com; point DNS as above.
+- [x] Register 2400franklin.com (done 2026-10-18, Cloudflare). [ ] Add the two DNS records above. [ ] Register 2400franklinrd.com.
 - [ ] Create the **leasing@2400franklin.com** mailbox, then add the Netlify form notification.
 - [ ] Decide whether rent stays visible (currently "From $950/mo").
 - [ ] Phone line and tour hours: none yet. When they exist, add `telephone` and `openingHours` to the

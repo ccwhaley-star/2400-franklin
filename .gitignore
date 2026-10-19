@@ -1,0 +1,3 @@
+build/*.ttf
+build/*.png
+.netlify/

@@ -1,0 +1,40 @@
+# 2400franklin.com — static site, no build step. Deploy publishes this folder as-is.
+[build]
+  publish = "."
+
+# www -> apex, and the street-sign spelling -> the real domain
+[[redirects]]
+  from = "https://www.2400franklin.com/*"
+  to = "https://2400franklin.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://2400franklinrd.com/*"
+  to = "https://2400franklin.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.2400franklinrd.com/*"
+  to = "https://2400franklin.com/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

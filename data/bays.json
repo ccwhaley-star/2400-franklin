@@ -57,13 +57,15 @@
       "name": "Kutz Family Hair Care",
       "line": "Hair salon",
       "logo": "/images/tenants/kutz.png",
-      "mark": "KUTZ"
+      "mark": "KUTZ",
+      "url": "https://www.facebook.com/kutzlawrence/"
     },
     {
       "name": "Ace Ignition Interlock",
       "line": "Interlock devices",
       "logo": "/images/tenants/ace-interlock.png",
-      "mark": "ACE"
+      "mark": "ACE",
+      "url": "https://aceinterlock.net/"
     }
   ]
 }

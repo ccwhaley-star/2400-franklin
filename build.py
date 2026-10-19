@@ -38,7 +38,8 @@ for b in data["existing_businesses"]:
         mark = f'<img src="{e(b["logo"])}" width="168" height="141" alt="{e(b["name"])} logo" loading="lazy">'
     else:
         mark = f'<span class="mark" aria-hidden="true">{e(b["mark"])}</span>'
-    biz.append(f'          <li>{mark}<div><b>{e(b["name"])}</b><span>{e(b["line"])}</span></div></li>')
+    name = f'<a href="{e(b["url"])}" target="_blank" rel="noopener">{e(b["name"])}</a>' if b.get("url") else e(b["name"])
+    biz.append(f'          <li>{mark}<div><b>{name}</b><span>{e(b["line"])}</span></div></li>')
 biz = "\n".join(biz)
 
 blocks = {

@@ -60,16 +60,11 @@
       "mark": "KUTZ"
     },
     {
-      "name": "Ace Bail Bonds",
-      "line": "Bail bonds · across from the county jail",
-      "logo": "/images/tenants/ace-bail-bonds.webp",
-      "mark": "ACE"
-    },
-    {
       "name": "Ace Ignition Interlock",
       "line": "Interlock devices · same office as Ace Bail Bonds",
       "logo": "/images/tenants/ace-interlock.png",
       "mark": "ACE"
     }
-  ]
+  ],
+  "_pending": "Ace Bail Bonds (acebailbonds.net) comes back once the owner has a cleaned-up logo; add {\"name\":\"Ace Bail Bonds\",\"line\":\"Bail bonds\",\"logo\":\"/images/tenants/ace-bail-bonds.webp\",\"mark\":\"ACE\"} to existing_businesses and run build.py."
 }

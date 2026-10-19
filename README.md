@@ -1,6 +1,6 @@
 # 2400franklin.com
 
-One-page leasing site for **2400 Franklin Flex Spaces**, 2400 Franklin Rd, Lawrence, KS 66046
+One-page leasing site for **2400 Franklin Flex Space**, 2400 Franklin Rd, Lawrence, KS 66046
 (a Flint Hills Capital property; sister of Free State Storage). Static HTML, no build step,
 hosted on Netlify.
 
@@ -11,7 +11,7 @@ hosted on Netlify.
 | Inquiries | Netlify Forms, form name `inquiry`, delivered to leasing@2400franklin.com |
 | Design | Option D of the mockups in `../2400-franklin-mockups/` (dark "Shop Floor" + floor plan + site map) |
 
-## Update availability, pricing or the existing-businesses row
+## Update availability or the existing-businesses row
 
 Everything that changes lives in **`data/bays.json`**. Edit it, then from this folder:
 
@@ -20,7 +20,7 @@ python build.py
 ```
 
 That rewrites the marked blocks in `index.html` (headline, the A–H drawing, the bay rows, the
-note, the terms table, the existing-businesses row). Commit `index.html` and deploy.
+note, the existing-businesses row). Commit `index.html` and deploy.
 
 - A row's `status` is `available`, `soon` or `leased`; `pill` is the text shown (e.g. "Spring 2027").
 - `bays` lists which letters a row covers so the drawing colors them the same way.
@@ -93,7 +93,7 @@ The frontage rendering has its tenant-sign panels blanked; regenerate it before 
 
 - [x] Register 2400franklin.com (done 2026-10-18, Cloudflare). [ ] Add the two DNS records above. [ ] Register 2400franklinrd.com.
 - [ ] Create the **leasing@2400franklin.com** mailbox, then add the Netlify form notification.
-- [ ] Decide whether rent stays visible (currently "From $950/mo").
+- [x] Rent and terms are off the site (owner, 2026-10-19). Pricing is quoted by email.
 - [ ] Phone line and tour hours: none yet. When they exist, add `telephone` and `openingHours` to the
       LocalBusiness JSON-LD, a tap-to-call button, and hours in the Inquire section.
 - [ ] Kutz Family Hair Care logo → `images/tenants/kutz.png`, then set `logo` in `data/bays.json`.

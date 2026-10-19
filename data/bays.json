@@ -1,24 +1,75 @@
 {
-  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. Status must be one of: available, soon, leased. `rows` is what the list shows; `strip` is the A-H drawing (each bay gets the status of the row it belongs to).",
+  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. Status must be one of: available, soon, leased. Pricing/terms are intentionally not on the site (owner, 2026-10-19). `rows` is what the list shows; `strip` is the A-H drawing (each bay gets the status of the row it belongs to).",
   "headline": "Eight bays. One open now.",
   "rows": [
-    { "bays": ["H"], "label": "H",   "description": "Front-corner bay · 900 SF",     "status": "available", "pill": "Available" },
-    { "bays": ["A"], "label": "A",   "description": "Tall flex suite with mezzanine", "status": "soon",      "pill": "Spring 2027" },
-    { "bays": ["B","C","D"], "label": "B–D", "description": "2,700 SF",              "status": "leased",    "pill": "Leased" },
-    { "bays": ["E"], "label": "E",   "description": "900 SF",                        "status": "leased",    "pill": "Leased" },
-    { "bays": ["F","G"], "label": "F–G", "description": "1,800 SF",                  "status": "leased",    "pill": "Leased" }
+    {
+      "bays": [
+        "H"
+      ],
+      "label": "H",
+      "description": "Front-corner bay · 900 SF",
+      "status": "available",
+      "pill": "Available"
+    },
+    {
+      "bays": [
+        "A"
+      ],
+      "label": "A",
+      "description": "Tall flex suite with mezzanine",
+      "status": "soon",
+      "pill": "Spring 2027"
+    },
+    {
+      "bays": [
+        "B",
+        "C",
+        "D"
+      ],
+      "label": "B–D",
+      "description": "2,700 SF",
+      "status": "leased",
+      "pill": "Leased"
+    },
+    {
+      "bays": [
+        "E"
+      ],
+      "label": "E",
+      "description": "900 SF",
+      "status": "leased",
+      "pill": "Leased"
+    },
+    {
+      "bays": [
+        "F",
+        "G"
+      ],
+      "label": "F–G",
+      "description": "1,800 SF",
+      "status": "leased",
+      "pill": "Leased"
+    }
   ],
   "note": "Bays combine side by side, so you can grow without moving.",
-  "terms": [
-    { "label": "Bay size",  "value": "900 SF, combinable" },
-    { "label": "Base rent", "value": "From $950/mo" },
-    { "label": "NNN est.",  "value": "~$225/mo (2027)" },
-    { "label": "Term",      "value": "3 years, 3% steps" },
-    { "label": "Address",   "value": "2400 Franklin Rd, Lawrence KS 66046" }
-  ],
   "existing_businesses": [
-    { "name": "Kutz Family Hair Care",  "line": "Hair salon",                                   "logo": null,                              "mark": "KUTZ" },
-    { "name": "Ace Bail Bonds",         "line": "Bail bonds · across from the county jail",     "logo": "/images/tenants/ace-bail-bonds.webp", "mark": "ACE" },
-    { "name": "Ace Ignition Interlock", "line": "Interlock devices · same office as Ace Bail Bonds", "logo": null,                        "mark": "ACE" }
+    {
+      "name": "Kutz Family Hair Care",
+      "line": "Hair salon",
+      "logo": null,
+      "mark": "KUTZ"
+    },
+    {
+      "name": "Ace Bail Bonds",
+      "line": "Bail bonds · across from the county jail",
+      "logo": "/images/tenants/ace-bail-bonds.webp",
+      "mark": "ACE"
+    },
+    {
+      "name": "Ace Ignition Interlock",
+      "line": "Interlock devices · same office as Ace Bail Bonds",
+      "logo": null,
+      "mark": "ACE"
+    }
   ]
 }

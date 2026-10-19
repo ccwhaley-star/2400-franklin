@@ -31,11 +31,6 @@ rows = "\n".join(
     for r in data["rows"])
 rows = rows.replace(' class=""', "")
 
-# --- terms
-terms = "\n".join(
-    f'        <dt>{e(t["label"])}</dt><dd{" class=\"big\"" if t["label"] == "Base rent" else ""}>{e(t["value"])}</dd>'
-    for t in data["terms"])
-
 # --- existing businesses
 biz = []
 for b in data["existing_businesses"]:
@@ -51,7 +46,6 @@ blocks = {
     "strip": strip,
     "rows": rows,
     "note": f'      <p class="note">{e(data["note"])}</p>',
-    "terms": terms,
     "businesses": biz,
 }
 

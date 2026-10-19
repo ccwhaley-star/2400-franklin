@@ -61,10 +61,9 @@
     },
     {
       "name": "Ace Ignition Interlock",
-      "line": "Interlock devices · same office as Ace Bail Bonds",
+      "line": "Interlock devices",
       "logo": "/images/tenants/ace-interlock.png",
       "mark": "ACE"
     }
-  ],
-  "_pending": "Ace Bail Bonds (acebailbonds.net) comes back once the owner has a cleaned-up logo; add {\"name\":\"Ace Bail Bonds\",\"line\":\"Bail bonds\",\"logo\":\"/images/tenants/ace-bail-bonds.webp\",\"mark\":\"ACE\"} to existing_businesses and run build.py."
+  ]
 }

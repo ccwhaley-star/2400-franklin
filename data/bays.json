@@ -56,7 +56,7 @@
     {
       "name": "Kutz Family Hair Care",
       "line": "Hair salon",
-      "logo": null,
+      "logo": "/images/tenants/kutz.png",
       "mark": "KUTZ"
     },
     {
@@ -68,7 +68,7 @@
     {
       "name": "Ace Ignition Interlock",
       "line": "Interlock devices · same office as Ace Bail Bonds",
-      "logo": null,
+      "logo": "/images/tenants/ace-interlock.png",
       "mark": "ACE"
     }
   ]

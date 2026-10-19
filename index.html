@@ -220,7 +220,7 @@ section.band{background:var(--band)}
 .tenants .mark{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--block);display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.02em;color:var(--muted);filter:grayscale(1)}
 .tenants b{display:block;font-size:15px;font-weight:700;color:var(--muted);letter-spacing:.01em}
 .tenants span{display:block;font-size:13px}
-.tenants img{flex:0 0 auto;filter:grayscale(1);opacity:.75;height:44px;width:auto;border-radius:4px}
+.tenants img{flex:0 0 auto;filter:grayscale(1);opacity:.75;height:44px;width:auto;border-radius:4px;max-width:120px;object-fit:contain}
 .tenants .mark{font-size:12px;letter-spacing:.02em}
 @media (min-width:700px){.tenants ul{grid-template-columns:1fr 1fr 1fr}}
 
@@ -511,9 +511,9 @@ body.bar-on{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
         <p class="label">Existing businesses</p>
         <ul>
           <!-- data:businesses -->
-          <li><span class="mark" aria-hidden="true">KUTZ</span><div><b>Kutz Family Hair Care</b><span>Hair salon</span></div></li>
+          <li><img src="/images/tenants/kutz.png" width="168" height="141" alt="Kutz Family Hair Care logo" loading="lazy"><div><b>Kutz Family Hair Care</b><span>Hair salon</span></div></li>
           <li><img src="/images/tenants/ace-bail-bonds.webp" width="168" height="141" alt="Ace Bail Bonds logo" loading="lazy"><div><b>Ace Bail Bonds</b><span>Bail bonds · across from the county jail</span></div></li>
-          <li><span class="mark" aria-hidden="true">ACE</span><div><b>Ace Ignition Interlock</b><span>Interlock devices · same office as Ace Bail Bonds</span></div></li>
+          <li><img src="/images/tenants/ace-interlock.png" width="168" height="141" alt="Ace Ignition Interlock logo" loading="lazy"><div><b>Ace Ignition Interlock</b><span>Interlock devices · same office as Ace Bail Bonds</span></div></li>
           <!-- /data:businesses -->
         </ul>
       </div>

@@ -1,6 +1,6 @@
 {
   "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. Status must be one of: available, soon, leased. Pricing/terms are intentionally not on the site (owner, 2026-10-19). `rows` is what the list shows; `strip` is the A-H drawing (each bay gets the status of the row it belongs to).",
-  "headline": "Eight bays. Three open now.",
+  "headline": "Eight bays. One open now.",
   "rows": [
     {
       "bays": [
@@ -13,21 +13,21 @@
     },
     {
       "bays": [
-        "G"
-      ],
-      "label": "G",
-      "description": "900 SF",
-      "status": "available",
-      "pill": "Available"
-    },
-    {
-      "bays": [
         "F"
       ],
       "label": "F",
       "description": "900 SF",
-      "status": "available",
-      "pill": "Available"
+      "status": "soon",
+      "pill": "December 2026"
+    },
+    {
+      "bays": [
+        "G"
+      ],
+      "label": "G",
+      "description": "900 SF",
+      "status": "soon",
+      "pill": "December 2026"
     },
     {
       "bays": [

@@ -9,7 +9,7 @@ hosted on Netlify.
 | Netlify site | `2400-franklin` (id `0175550f-254b-42df-ae4b-75dea2f64c8c`), https://2400-franklin.netlify.app, git-linked to github.com/ccwhaley-star/2400-franklin (push to `main` deploys) |
 | Production domain | https://2400franklin.com (attached to the Netlify site; DNS records still to be added at Cloudflare; www and 2400franklinrd.com redirect to it, see `netlify.toml`) |
 | Inquiries | Netlify Forms, form name `inquiry`, delivered to leasing@2400franklin.com |
-| Design | Option D of the mockups in `../2400-franklin-mockups/` (dark "Shop Floor" + floor plan + site map) |
+| Design | Option F ("Atelier") of the mockups in `../2400-franklin-mockups/`, live from 2026-10-20 |
 
 ## Update availability or the existing-businesses row
 
@@ -19,15 +19,17 @@ Everything that changes lives in **`data/bays.json`**. Edit it, then from this f
 python build.py
 ```
 
-That rewrites the marked blocks in `index.html` (headline, the A–H drawing, the bay rows, the
-note, the existing-businesses row). Commit `index.html` and deploy.
+That rewrites three marked blocks in `index.html`: the bay data the chooser reads (tiles, building
+overlay, detail panel), the "Existing businesses" logo strip, and the phone sticky bar. Commit
+`index.html` and push.
 
-- A row's `status` is `available`, `soon` or `leased`; `pill` is the text shown (e.g. "Spring 2027").
-- `bays` lists which letters a row covers so the drawing colors them the same way.
-- To show a tenant logo, drop a grayscale-friendly PNG/WebP in `images/tenants/` and set the row's
-  `logo` to its path (`/images/tenants/kutz.png`); set it to `null` to show the text mark instead.
-- FAQ and all other copy are edited directly in `index.html`. Keep the FAQ answers and the
-  `FAQPage` JSON-LD in the `<head>` in sync.
+- Each bay has `status` (`available`, `soon`, `leased`), a short `tag` shown under the letter
+  (`Open`, `Dec 2026`, `Leased`), a longer `when` for the detail panel, a `name`, a `blurb`, and
+  `mezzanine`. Only bays with `mezzanine: true` show the mezzanine office and the flex-suite photo.
+- `sticky_bar` is the line on the phone bar ("Bay H · open now / F and G open December 2026").
+- Tenant logos go in `images/tenants/` and are listed under `existing_businesses` with a link.
+- All other copy (headline, FAQ, neighborhood list) is edited directly in `index.html`. Keep the FAQ
+  answers and the `FAQPage` JSON-LD in the `<head>` in sync.
 
 ## Deploy
 

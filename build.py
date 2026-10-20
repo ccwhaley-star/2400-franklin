@@ -5,61 +5,59 @@ Then commit index.html. Netlify serves the committed file; it does not run this.
 
 The HTML between each pair of <!-- data:NAME --> ... <!-- /data:NAME --> markers is
 replaced. Everything else in index.html is left alone.
+  baydata     the JSON the bay chooser reads (tiles, building overlay, detail panel)
+  businesses  the "Existing businesses" logo strip under the hero
+  bar         the phone sticky bar text
 """
 import json, re, sys, html, pathlib
 
 HERE = pathlib.Path(__file__).parent
 data = json.loads((HERE / "data" / "bays.json").read_text(encoding="utf-8"))
 page = (HERE / "index.html").read_text(encoding="utf-8")
-
 e = html.escape
-status_class = {"available": "open", "soon": "soon", "leased": ""}
 
-# --- the A-H drawing: each bay takes the status of the row it belongs to
-bay_status = {}
-for row in data["rows"]:
-    for b in row["bays"]:
-        bay_status[b] = row["status"]
-strip = "\n".join(
-    f'          <div class="bay{(" " + status_class[bay_status.get(b, "leased")]).rstrip()}">{b}</div>'
-    for b in "ABCDEFGH")
+STATUS = {"available": "open", "soon": "soon", "leased": "leased"}
+bays = {}
+for letter, b in data["bays"].items():
+    if b["status"] not in STATUS:
+        sys.exit(f"bay {letter}: status must be available, soon or leased")
+    bays[letter] = {"s": STATUS[b["status"]], "tag": b["tag"], "status": b["when"],
+                    "name": b["name"], "mezz": bool(b["mezzanine"]), "p": b["blurb"]}
+baydata = ('<script type="application/json" id="bay-data">'
+           + json.dumps(bays, ensure_ascii=False).replace("</", "<\\/") + "</script>")
 
-# --- the rows
-rows = "\n".join(
-    f'        <li class="{status_class[r["status"]]}"><span class="id">{e(r["label"])}</span>'
-    f'<span class="who-txt">{e(r["description"])}</span><span class="pill">{e(r["pill"])}</span></li>'
-    for r in data["rows"])
-rows = rows.replace(' class=""', "")
+def logo_size(path):
+    try:
+        from PIL import Image
+        with Image.open(HERE / path.lstrip("/")) as im:
+            return im.size
+    except Exception:
+        return (400, 200)
 
-# --- existing businesses
 biz = []
 for b in data["existing_businesses"]:
-    if b.get("logo"):
-        mark = f'<img src="{e(b["logo"])}" width="168" height="141" alt="{e(b["name"])} logo" loading="lazy">'
-    else:
-        mark = f'<span class="mark" aria-hidden="true">{e(b["mark"])}</span>'
-    name = f'<a href="{e(b["url"])}" target="_blank" rel="noopener">{e(b["name"])}</a>' if b.get("url") else e(b["name"])
-    biz.append(f'          <li>{mark}<div><b>{name}</b><span>{e(b["line"])}</span></div></li>')
-biz = "\n".join(biz)
+    w, h = logo_size(b["logo"])
+    img = f'<img src="{e(b["logo"])}" width="{w}" height="{h}" alt="{e(b["name"])}" loading="lazy">'
+    if b.get("url"):
+        img = f'<a href="{e(b["url"])}" target="_blank" rel="noopener">{img}</a>'
+    biz.append(f"        <li>{img}</li>")
 
+bar = data["sticky_bar"]
 blocks = {
-    "headline": f'      <h2>{e(data["headline"])}</h2>',
-    "strip": strip,
-    "rows": rows,
-    "note": f'      <p class="note">{e(data["note"])}</p>',
-    "businesses": biz,
+    "baydata": baydata,
+    "businesses": "\n".join(biz),
+    "bar": f'<div class="bay-line"><b>{e(bar["title"])}</b>{e(bar["note"])}</div>',
 }
 
 missing = []
 for name, body in blocks.items():
-    pat = re.compile(rf"(<!-- data:{name} -->\n).*?(\n\s*<!-- /data:{name} -->)", re.S)
+    pat = re.compile(rf"(<!-- data:{name} -->\n?).*?(\n?\s*<!-- /data:{name} -->)", re.S)
     if not pat.search(page):
         missing.append(name); continue
     page = pat.sub(lambda m: m.group(1) + body + m.group(2), page, count=1)
-
 if missing:
     sys.exit(f"markers not found in index.html: {', '.join(missing)}")
 
 (HERE / "index.html").write_text(page, encoding="utf-8")
-open_now = [r["label"] for r in data["rows"] if r["status"] == "available"]
-print(f"index.html updated: {len(data['rows'])} rows, open now: {', '.join(open_now) or 'none'}")
+open_now = [k for k, b in data["bays"].items() if b["status"] == "available"]
+print(f"index.html updated: {len(bays)} bays, open now: {', '.join(open_now) or 'none'}")

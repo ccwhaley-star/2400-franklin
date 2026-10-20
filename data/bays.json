@@ -1,86 +1,19 @@
 {
-  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. Status must be one of: available, soon, leased. Pricing/terms are intentionally not on the site (owner, 2026-10-19). `rows` is what the list shows; `strip` is the A-H drawing (each bay gets the status of the row it belongs to).",
-  "headline": "Eight bays. One open now.",
-  "rows": [
-    {
-      "bays": [
-        "H"
-      ],
-      "label": "H",
-      "description": "Front-corner bay · 900 SF",
-      "status": "available",
-      "pill": "Available"
-    },
-    {
-      "bays": [
-        "F"
-      ],
-      "label": "F",
-      "description": "900 SF",
-      "status": "soon",
-      "pill": "December 2026"
-    },
-    {
-      "bays": [
-        "G"
-      ],
-      "label": "G",
-      "description": "900 SF",
-      "status": "soon",
-      "pill": "December 2026"
-    },
-    {
-      "bays": [
-        "A"
-      ],
-      "label": "A",
-      "description": "Tall flex suite with mezzanine",
-      "status": "soon",
-      "pill": "Spring 2027"
-    },
-    {
-      "bays": [
-        "B",
-        "C",
-        "D"
-      ],
-      "label": "B–D",
-      "description": "2,700 SF",
-      "status": "leased",
-      "pill": "Leased"
-    },
-    {
-      "bays": [
-        "E"
-      ],
-      "label": "E",
-      "description": "900 SF",
-      "status": "leased",
-      "pill": "Leased"
-    }
-  ],
-  "note": "Bays combine side by side, so you can grow without moving.",
+  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, Dec 2026, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay photo. Pricing/terms are intentionally not on the site.",
+  "bays": {
+    "A": { "status": "soon",      "tag": "2027",     "when": "Spring 2027",                     "name": "Tall flex suite",  "mezzanine": true,  "blurb": "The tall suite on the west end: full-height floor with the mezzanine office above, kitchenette and private restroom. Opens Spring 2027." },
+    "B": { "status": "leased",    "tag": "Leased",   "when": "Leased · part of B–D, 2,700 SF",  "name": "Bay B",            "mezzanine": false, "blurb": "Leased, combined with C and D as one 2,700 SF space." },
+    "C": { "status": "leased",    "tag": "Leased",   "when": "Leased · part of B–D, 2,700 SF",  "name": "Bay C",            "mezzanine": false, "blurb": "Leased, combined with B and D as one 2,700 SF space." },
+    "D": { "status": "leased",    "tag": "Leased",   "when": "Leased · part of B–D, 2,700 SF",  "name": "Bay D",            "mezzanine": false, "blurb": "Leased, combined with B and C as one 2,700 SF space." },
+    "E": { "status": "leased",    "tag": "Leased",   "when": "Leased · 900 SF",                 "name": "Bay E",            "mezzanine": false, "blurb": "Leased as a single 900 SF bay." },
+    "F": { "status": "soon",      "tag": "Dec 2026", "when": "December 2026",                   "name": "Bay F",            "mezzanine": false, "blurb": "Full-height shop floor, kitchenette and private restroom. Roll-up door at the back, storefront entry on Franklin Road." },
+    "G": { "status": "soon",      "tag": "Dec 2026", "when": "December 2026",                   "name": "Bay G",            "mezzanine": false, "blurb": "Full-height shop floor, kitchenette and private restroom. Roll-up door at the back, storefront entry on Franklin Road." },
+    "H": { "status": "available", "tag": "Open",     "when": "Available now",                   "name": "Front-corner bay", "mezzanine": false, "blurb": "The corner on Franklin Road. Full-height shop floor, kitchenette and private restroom. Roll-up door at the back." }
+  },
+  "sticky_bar": { "title": "Bay H · open now", "note": "F and G open December 2026" },
   "existing_businesses": [
-    {
-      "name": "Kutz Family Hair Care",
-      "line": "Hair salon",
-      "logo": "/images/tenants/kutz.png",
-      "mark": "KUTZ",
-      "url": "https://www.facebook.com/kutzlawrence/"
-    },
-    {
-      "name": "Ace Bail Bonds",
-      "line": "Bail bonds",
-      "logo": "/images/tenants/ace-bail-bonds.png",
-      "mark": "ACE",
-      "url": "https://www.acebailbonds.net/"
-    },
-    {
-      "name": "Ace Ignition Interlock",
-      "line": "Interlock devices",
-      "logo": "/images/tenants/ace-interlock.png",
-      "mark": "ACE",
-      "url": "https://aceinterlock.net/"
-    }
+    { "name": "Kutz Family Hair Care",  "logo": "/images/tenants/kutz.png",           "url": "https://www.facebook.com/kutzlawrence/" },
+    { "name": "Ace Bail Bonds",         "logo": "/images/tenants/ace-bail-bonds.png", "url": "https://www.acebailbonds.net/" },
+    { "name": "Ace Interlock",          "logo": "/images/tenants/ace-interlock.png",  "url": "https://aceinterlock.net/" }
   ]
 }

@@ -7,7 +7,7 @@ hosted on Netlify.
 | | |
 |---|---|
 | Netlify site | `2400-franklin` (id `0175550f-254b-42df-ae4b-75dea2f64c8c`), https://2400-franklin.netlify.app, git-linked to github.com/ccwhaley-star/2400-franklin (push to `main` deploys) |
-| Production domain | https://2400franklin.com (attached to the Netlify site; DNS records still to be added at Cloudflare; www and 2400franklinrd.com redirect to it, see `netlify.toml`) |
+| Production domain | https://2400franklin.com (live with HTTPS since 2026-10-20; www redirects to it; 2400franklinrd.com will too once registered, see `netlify.toml`) |
 | Inquiries | Netlify Forms, form name `inquiry`, delivered to leasing@2400franklin.com |
 | Design | Option F ("Atelier") of the mockups in `../2400-franklin-mockups/`, live from 2026-10-20 |
 
@@ -93,7 +93,7 @@ The frontage rendering has its tenant-sign panels blanked; regenerate it before 
 
 ## Launch checklist (owner)
 
-- [x] Register 2400franklin.com (done 2026-10-18, Cloudflare). [ ] Add the two DNS records above. [ ] Register 2400franklinrd.com.
+- [x] Register 2400franklin.com (done 2026-10-18, Cloudflare). [x] DNS records added and HTTPS issued (2026-10-20). [ ] Register 2400franklinrd.com.
 - [ ] Create the **leasing@2400franklin.com** mailbox, then add the Netlify form notification.
 - [x] Rent and terms are off the site (owner, 2026-10-19). Pricing is quoted by email.
 - [ ] Phone line and tour hours: none yet. When they exist, add `telephone` and `openingHours` to the

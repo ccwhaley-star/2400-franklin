@@ -8,7 +8,7 @@ hosted on Netlify.
 |---|---|
 | Netlify site | `2400-franklin` (id `0175550f-254b-42df-ae4b-75dea2f64c8c`), https://2400-franklin.netlify.app, git-linked to github.com/ccwhaley-star/2400-franklin (push to `main` deploys) |
 | Production domain | https://2400franklin.com (live with HTTPS since 2026-10-20; www redirects to it; 2400franklinrd.com will too once registered, see `netlify.toml`) |
-| Inquiries | Netlify Forms, form name `inquiry`, delivered to leasing@2400franklin.com |
+| Inquiries | Netlify Forms, form name `inquiry`. Email notifications go to ccwhaley@gmail.com until the leasing@2400franklin.com mailbox exists (switch the hook in Netlify → Forms → Form notifications then). Phone (785) 727-2112 |
 | Design | Option F ("Atelier") of the mockups in `../2400-franklin-mockups/`, live from 2026-10-20 |
 
 ## Update availability or the existing-businesses row
@@ -96,7 +96,7 @@ The frontage rendering has its tenant-sign panels blanked; regenerate it before 
 - [x] Register 2400franklin.com (done 2026-10-18, Cloudflare). [x] DNS records added and HTTPS issued (2026-10-20). [ ] Register 2400franklinrd.com.
 - [ ] Create the **leasing@2400franklin.com** mailbox, then add the Netlify form notification.
 - [x] Rent and terms are off the site (owner, 2026-10-19). Pricing is quoted by email.
-- [ ] Phone line and tour hours: none yet. When they exist, add `telephone` and `openingHours` to the
+- [x] Phone line: (785) 727-2112 (on the page, footer and LocalBusiness JSON-LD, 2026-10-21). [ ] Tour hours: none yet. When they exist, add `telephone` and `openingHours` to the
       LocalBusiness JSON-LD, a tap-to-call button, and hours in the Inquire section.
 - [ ] Kutz Family Hair Care logo → `images/tenants/kutz.png`, then set `logo` in `data/bays.json`.
       Confirm all three businesses are OK being shown.

@@ -7,7 +7,7 @@
       "when": "Spring 2027",
       "name": "Tall flex suite",
       "mezzanine": true,
-      "blurb": "The tall suite on the west end: full-height floor with the mezzanine office above, kitchenette and private restroom. Opens Spring 2027."
+      "blurb": "The tall suite on the west end: full-height floor with the mezzanine office above and a private restroom. Opens Spring 2027."
     },
     "B": {
       "status": "leased",
@@ -47,7 +47,7 @@
       "when": "December 2026 · one unit",
       "name": "Bays F–G",
       "mezzanine": false,
-      "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side: full-height shop floor, kitchenette and restroom, roll-up doors at the back and storefront entry on Franklin Road. Opens December 2026.",
+      "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side: full-height shop floor, private restroom, roll-up doors at the back and storefront entry on Franklin Road. Opens December 2026.",
       "unit": "F–G",
       "size": "60 × 30 ft",
       "sf": "1,800 SF"
@@ -58,7 +58,7 @@
       "when": "December 2026 · one unit",
       "name": "Bays F–G",
       "mezzanine": false,
-      "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side: full-height shop floor, kitchenette and restroom, roll-up doors at the back and storefront entry on Franklin Road. Opens December 2026.",
+      "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side: full-height shop floor, private restroom, roll-up doors at the back and storefront entry on Franklin Road. Opens December 2026.",
       "unit": "F–G",
       "size": "60 × 30 ft",
       "sf": "1,800 SF"
@@ -69,7 +69,7 @@
       "when": "Available now",
       "name": "Front-corner bay",
       "mezzanine": false,
-      "blurb": "The corner on Franklin Road, 18 ft wide by 30 ft deep (540 SF). Full-height shop floor, kitchenette and private restroom. Roll-up door at the back.",
+      "blurb": "The corner on Franklin Road, 18 ft wide by 30 ft deep (540 SF). Full-height shop floor and private restroom. Roll-up door at the back.",
       "size": "18 × 30 ft",
       "sf": "540 SF"
     }

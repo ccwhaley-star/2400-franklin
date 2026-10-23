@@ -69,7 +69,9 @@
       "when": "Available now",
       "name": "Front-corner bay",
       "mezzanine": false,
-      "blurb": "The corner on Franklin Road. Full-height shop floor, kitchenette and private restroom. Roll-up door at the back."
+      "blurb": "The corner on Franklin Road, 18 ft wide by 30 ft deep (540 SF). Full-height shop floor, kitchenette and private restroom. Roll-up door at the back.",
+      "size": "18 × 30 ft",
+      "sf": "540 SF"
     }
   },
   "sticky_bar": {

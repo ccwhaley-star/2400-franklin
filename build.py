@@ -23,6 +23,9 @@ for letter, b in data["bays"].items():
         sys.exit(f"bay {letter}: status must be available, soon or leased")
     bays[letter] = {"s": STATUS[b["status"]], "tag": b["tag"], "status": b["when"],
                     "name": b["name"], "mezz": bool(b["mezzanine"]), "p": b["blurb"]}
+    for extra in ("unit", "size", "sf"):          # bays that lease together as one unit
+        if b.get(extra):
+            bays[letter][extra] = b[extra]
 baydata = ('<script type="application/json" id="bay-data">'
            + json.dumps(bays, ensure_ascii=False).replace("</", "<\\/") + "</script>")
 

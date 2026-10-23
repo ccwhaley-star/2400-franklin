@@ -484,7 +484,7 @@ nav.desk a{white-space:nowrap}
           <aside class="panel" id="panel" aria-live="polite">
             <h3 class="pbay"><span id="p-bay">Bay A</span></h3>
             <p class="pstatus" id="p-status">Spring 2027</p>
-            <div class="psize"><b>30 × 30 ft</b><span id="p-sf">900 SF ground floor</span></div>
+            <div class="psize"><b id="p-size">30 × 30 ft</b><span id="p-sf">900 SF ground floor</span></div>
             <ul class="amen" id="p-amen"></ul>
             <figure class="pprev" id="p-prev"></figure>
             <div class="prow"><a class="btn" href="#inquire" id="d-cta">Ask about Bay A</a></div>
@@ -635,7 +635,7 @@ nav.desk a{white-space:nowrap}
             <div class="field"><label for="biz">Business <span class="opt">(optional)</span></label><input id="biz" name="business" autocomplete="organization"></div>
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="err-email"><p class="err" id="err-email" aria-live="polite"></p></div>
             <div class="field"><label for="phone">Phone <span class="opt">(email or phone)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="err-phone"><p class="err" id="err-phone" aria-live="polite"></p></div>
-            <div class="field"><label for="size">Space needed</label><select id="size" name="space"><option>One bay (900 SF)</option><option>Flex suite with mezzanine</option><option selected>Not sure yet</option></select></div>
+            <div class="field"><label for="size">Space needed</label><select id="size" name="space"><option>One bay (900 SF)</option><option>Two bays (1,800 SF)</option><option>Flex suite with mezzanine</option><option selected>Not sure yet</option></select></div>
             <div class="field"><label for="use">What will you use it for?</label><textarea id="use" name="use"></textarea></div>
             <button class="btn" type="submit">Send inquiry</button>
           </form>
@@ -658,12 +658,12 @@ nav.desk a{white-space:nowrap}
 </footer>
 
 <div class="ctabar" id="ctabar" aria-hidden="true">
-  <!-- data:bar --><div class="bay-line"><b>Bay H · open now</b>F and G open December 2026</div><!-- /data:bar -->
+  <!-- data:bar --><div class="bay-line"><b>Bay H · open now</b>F–G (1,800 SF) opens December 2026</div><!-- /data:bar -->
   <span class="bar-ctas"><a class="btn sm ghost call" href="tel:+17857272112" tabindex="-1" aria-label="Call (785) 727-2112"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a><a class="btn sm" href="#inquire" tabindex="-1">Inquire</a></span>
 </div>
 
 <!-- data:baydata -->
-<script type="application/json" id="bay-data">{"A": {"s": "soon", "tag": "2027", "status": "Spring 2027", "name": "Tall flex suite", "mezz": true, "p": "The tall suite on the west end: full-height floor with the mezzanine office above, kitchenette and private restroom. Opens Spring 2027."}, "B": {"s": "leased", "tag": "Leased", "status": "Leased · part of B–D, 2,700 SF", "name": "Bay B", "mezz": false, "p": "Leased, combined with C and D as one 2,700 SF space."}, "C": {"s": "leased", "tag": "Leased", "status": "Leased · part of B–D, 2,700 SF", "name": "Bay C", "mezz": false, "p": "Leased, combined with B and D as one 2,700 SF space."}, "D": {"s": "leased", "tag": "Leased", "status": "Leased · part of B–D, 2,700 SF", "name": "Bay D", "mezz": false, "p": "Leased, combined with B and C as one 2,700 SF space."}, "E": {"s": "leased", "tag": "Leased", "status": "Leased · 900 SF", "name": "Bay E", "mezz": false, "p": "Leased as a single 900 SF bay."}, "F": {"s": "soon", "tag": "Dec 2026", "status": "December 2026", "name": "Bay F", "mezz": false, "p": "Full-height shop floor, kitchenette and private restroom. Roll-up door at the back, storefront entry on Franklin Road."}, "G": {"s": "soon", "tag": "Dec 2026", "status": "December 2026", "name": "Bay G", "mezz": false, "p": "Full-height shop floor, kitchenette and private restroom. Roll-up door at the back, storefront entry on Franklin Road."}, "H": {"s": "open", "tag": "Open", "status": "Available now", "name": "Front-corner bay", "mezz": false, "p": "The corner on Franklin Road. Full-height shop floor, kitchenette and private restroom. Roll-up door at the back."}}</script>
+<script type="application/json" id="bay-data">{"A": {"s": "soon", "tag": "2027", "status": "Spring 2027", "name": "Tall flex suite", "mezz": true, "p": "The tall suite on the west end: full-height floor with the mezzanine office above, kitchenette and private restroom. Opens Spring 2027."}, "B": {"s": "leased", "tag": "Leased", "status": "Leased · part of B–D, 2,700 SF", "name": "Bay B", "mezz": false, "p": "Leased, combined with C and D as one 2,700 SF space."}, "C": {"s": "leased", "tag": "Leased", "status": "Leased · part of B–D, 2,700 SF", "name": "Bay C", "mezz": false, "p": "Leased, combined with B and D as one 2,700 SF space."}, "D": {"s": "leased", "tag": "Leased", "status": "Leased · part of B–D, 2,700 SF", "name": "Bay D", "mezz": false, "p": "Leased, combined with B and C as one 2,700 SF space."}, "E": {"s": "leased", "tag": "Leased", "status": "Leased · 900 SF", "name": "Bay E", "mezz": false, "p": "Leased as a single 900 SF bay."}, "F": {"s": "soon", "tag": "Dec 2026", "status": "December 2026 · one unit", "name": "Bays F–G", "mezz": false, "p": "Bays F and G lease together as one 1,800 SF unit, side by side: full-height shop floor, kitchenette and restroom, roll-up doors at the back and storefront entry on Franklin Road. Opens December 2026.", "unit": "F–G", "size": "60 × 30 ft", "sf": "1,800 SF"}, "G": {"s": "soon", "tag": "Dec 2026", "status": "December 2026 · one unit", "name": "Bays F–G", "mezz": false, "p": "Bays F and G lease together as one 1,800 SF unit, side by side: full-height shop floor, kitchenette and restroom, roll-up doors at the back and storefront entry on Franklin Road. Opens December 2026.", "unit": "F–G", "size": "60 × 30 ft", "sf": "1,800 SF"}, "H": {"s": "open", "tag": "Open", "status": "Available now", "name": "Front-corner bay", "mezz": false, "p": "The corner on Franklin Road. Full-height shop floor, kitchenette and private restroom. Roll-up door at the back."}}</script>
 <!-- /data:baydata -->
 <script>
 (function(){
@@ -719,19 +719,20 @@ nav.desk a{white-space:nowrap}
   function render(){
     document.querySelectorAll('#overlay g').forEach(function(g){var on=sel.indexOf(g.getAttribute('data-bay'))>-1;g.classList.toggle('sel',on);g.setAttribute('aria-pressed',on?'true':'false')});
     document.querySelectorAll('.tiles button').forEach(function(b){b.setAttribute('aria-pressed',sel.indexOf(b.getAttribute('data-bay'))>-1?'true':'false')});
-    var first=sel[0], b=BAYS[first], st=$('p-status');
-      $('p-bay').textContent='Bay '+first;
+    var first=sel[0], b=BAYS[first], st=$('p-status'), label=b.unit?('Bays '+b.unit):('Bay '+first);
+      $('p-bay').textContent=label;
+      $('p-size').textContent=b.size||'30 × 30 ft';
       st.textContent=b.status; st.className='pstatus'+(b.s==='open'?' open':'');
-      $('p-sf').textContent='900 SF ground floor'+(b.mezz?' + mezzanine':'');
+      $('p-sf').textContent=(b.sf||'900 SF')+' ground floor'+(b.mezz?' + mezzanine':'');
       $('p-amen').innerHTML=amenities(first);
       $('p-prev').innerHTML=b.mezz
         ? '<picture><source type="image/avif" srcset="/images/flex-suite-interior-900.avif"><img src="/images/flex-suite-interior-900.webp" width="1400" height="1050" loading="lazy" alt="Rendering of the flex suite interior with the mezzanine office"></picture><figcaption>Bay '+first+' · mezzanine suite · rendering</figcaption>'
-        : '<picture><source type="image/avif" srcset="/images/standard-bay-900.avif"><img src="/images/standard-bay-900.webp" width="1502" height="1047" loading="lazy" alt="Rendering of a standard bay: open shop floor, bench wall, kitchenette and private restroom"></picture><figcaption>Bay '+first+' · standard bay · rendering</figcaption>';
-      $('d-cta').textContent=b.s==='leased'?'Ask about the next opening':(b.s==='soon'?'Reserve interest in Bay '+first:'Ask about Bay '+first);
-    if(picked){var sz=$('size'); sz.value=b.mezz?'Flex suite with mezzanine':'One bay (900 SF)';}
+        : '<picture><source type="image/avif" srcset="/images/standard-bay-900.avif"><img src="/images/standard-bay-900.webp" width="1502" height="1047" loading="lazy" alt="Rendering of a standard bay: open shop floor, bench wall, kitchenette and private restroom"></picture><figcaption>'+label+' · standard bay · rendering</figcaption>';
+      $('d-cta').textContent=b.s==='leased'?'Ask about the next opening':(b.s==='soon'?'Reserve interest in '+label:'Ask about '+label);
+    if(picked){var sz=$('size'); sz.value=b.mezz?'Flex suite with mezzanine':(b.unit?'Two bays (1,800 SF)':'One bay (900 SF)');}
   }
   var picked=false;
-  function pick(id){picked=true;sel=[id];render()}
+  function pick(id){picked=true;var u=BAYS[id].unit;sel=u?ORDER.filter(function(k){return BAYS[k].unit===u}):[id];render()}
   document.querySelectorAll('.tiles button').forEach(function(b){b.addEventListener('click',function(){pick(b.getAttribute('data-bay'))})});
   ov.addEventListener('click',function(e){var g=e.target.closest&&e.target.closest('g[data-bay]');if(g)pick(g.getAttribute('data-bay'))});
   ov.addEventListener('keydown',function(e){var g=e.target.closest&&e.target.closest('g[data-bay]');if(g&&(e.key==='Enter'||e.key===' ')){e.preventDefault();pick(g.getAttribute('data-bay'))}});

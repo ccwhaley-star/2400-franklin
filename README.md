@@ -32,7 +32,8 @@ overlay, detail panel), the "Existing businesses" logo strip, and the phone stic
 - `tenant_portal` is the Cubby tenant-portal address for current bay tenants (pay rent, autopay).
   When set, `build.py` adds a "Tenant portal" link to the desktop nav, an account icon in the phone
   header (hidden under 360 px, where it would push Inquire off screen) and a line in the footer.
-  Blank = hidden. 2400 Franklin's own portal is not set up in Cubby yet (2026-10-28).
+  Blank = hidden. Set to https://2400franklin.cubby.cc/ on 2026-10-28 before Cubby had set that portal up;
+  confirm the address once it exists.
 - All other copy (headline, FAQ, neighborhood list) is edited directly in `index.html`. Keep the FAQ
   answers and the `FAQPage` JSON-LD in the `<head>` in sync.
 

@@ -8,6 +8,8 @@ replaced. Everything else in index.html is left alone.
   baydata     the JSON the bay chooser reads (tiles, building overlay, detail panel)
   businesses  the "Existing businesses" logo strip under the hero
   bar         the phone sticky bar text
+  portal_*    the "Tenant portal" link (desktop nav, phone header, footer);
+              empty, so hidden, while tenant_portal in bays.json is blank
 """
 import json, re, sys, html, pathlib
 
@@ -45,11 +47,22 @@ for b in data["existing_businesses"]:
         img = f'<a href="{e(b["url"])}" target="_blank" rel="noopener">{img}</a>'
     biz.append(f"        <li>{img}</li>")
 
+portal = (data.get("tenant_portal") or "").strip()
+def portal_link(attrs):
+    return f'<a {attrs} href="{e(portal)}" rel="noopener">Tenant portal</a>' if portal else ""
+
 bar = data["sticky_bar"]
 blocks = {
     "baydata": baydata,
     "businesses": "\n".join(biz),
     "bar": f'<div class="bay-line"><b>{e(bar["title"])}</b>{e(bar["note"])}</div>',
+    "portal_nav": portal_link('class="portal"'),
+    # phones: an account icon, since the words push the Inquire button off a 360px screen
+    "portal_hdr": (f'<a id="hdr-portal" href="{e(portal)}" rel="noopener" aria-label="Tenant portal" title="Tenant portal">'
+                   '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" '
+                   'stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.6"/>'
+                   '<path d="M4.8 19.5c1.2-3.3 4-5 7.2-5s6 1.7 7.2 5"/></svg></a>') if portal else "",
+    "portal_foot": ("<p>Already leasing a bay? " + portal_link('class="portal"') + "</p>") if portal else "",
 }
 
 missing = []
@@ -63,4 +76,5 @@ if missing:
 
 (HERE / "index.html").write_text(page, encoding="utf-8")
 open_now = [k for k, b in data["bays"].items() if b["status"] == "available"]
-print(f"index.html updated: {len(bays)} bays, open now: {', '.join(open_now) or 'none'}")
+print(f"index.html updated: {len(bays)} bays, open now: {', '.join(open_now) or 'none'}, "
+      f"tenant portal: {portal or 'hidden (tenant_portal is blank)'}")

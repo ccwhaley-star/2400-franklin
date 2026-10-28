@@ -29,6 +29,10 @@ overlay, detail panel), the "Existing businesses" logo strip, and the phone stic
 - Bays that lease together (F and G today) share a `unit` label plus `size` and `sf`; picking either letter on the site selects the whole unit and the panel shows the combined size.
 - `sticky_bar` is the line on the phone bar ("Bay H · open now / F and G open December 2026").
 - Tenant logos go in `images/tenants/` and are listed under `existing_businesses` with a link.
+- `tenant_portal` is the Cubby tenant-portal address for current bay tenants (pay rent, autopay).
+  When set, `build.py` adds a "Tenant portal" link to the desktop nav, an account icon in the phone
+  header (hidden under 360 px, where it would push Inquire off screen) and a line in the footer.
+  Blank = hidden. 2400 Franklin's own portal is not set up in Cubby yet (2026-10-28).
 - All other copy (headline, FAQ, neighborhood list) is edited directly in `index.html`. Keep the FAQ
   answers and the `FAQPage` JSON-LD in the `<head>` in sync.
 
@@ -108,6 +112,7 @@ The frontage rendering has its tenant-sign panels blanked; regenerate it before 
       the site; keep name/address identical to the footer and JSON-LD.
 - [ ] Keep "Newly renovated" until renovations are visibly done; switch to "Renovations underway" if
       launching earlier.
+- [ ] Cubby tenant portal for the bays: set `tenant_portal` in `data/bays.json` to its `.cubby.cc` address, run `python build.py`.
 - [ ] Cookieless analytics if wanted (Plausible or Cloudflare Web Analytics); none installed.
 
 ## QA notes (2026-10-18)

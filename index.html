@@ -402,6 +402,9 @@ body.bar-on{padding-bottom:72px}
 }
 @media (min-width:900px) and (max-width:1180px){nav.desk{gap:18px!important}nav.desk a:not(.btn){font-size:10px!important;letter-spacing:.16em!important}.lockup{font-size:38px!important}}
 nav.desk a{white-space:nowrap}
+#hdr-portal{margin-left:auto;margin-right:-6px;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:none;border-radius:50%;color:#F3EEE4;opacity:.85}#hdr-portal:hover{opacity:1}
+@media (min-width:900px),(max-width:359px){#hdr-portal{display:none}}
+nav.desk .portal{padding-left:22px;border-left:1px solid rgba(243,238,228,.25)}
 @media (max-width:599px){.each span{display:block}.each .sep{display:none}}
 </style>
 </head>
@@ -422,8 +425,10 @@ nav.desk a{white-space:nowrap}
       <a href="#ways">Who it's for</a>
       <a href="#why">Neighborhood</a>
       <a href="#faq">Questions</a>
+      <!-- data:portal_nav --><!-- /data:portal_nav -->
       <a class="btn sm" href="#inquire">Inquire</a>
     </nav>
+    <!-- data:portal_hdr --><!-- /data:portal_hdr -->
     <a class="btn sm" href="#inquire" id="hdr-cta">Inquire</a>
   </div>
 </header>
@@ -652,6 +657,7 @@ nav.desk a{white-space:nowrap}
   <div class="col cols">
     <div>
       <p>2400 Franklin Flex Space · 2400 Franklin Rd, Lawrence, KS 66046 · <a href="tel:+17857272112">(785) 727-2112</a></p>
+      <!-- data:portal_foot --><!-- /data:portal_foot -->
       <p><a href="https://flinthills.capital">A Flint Hills Capital property</a></p>
     </div>
     <a class="credit" href="https://meridian6.ai"><span class="m" aria-hidden="true">M<i>.</i></span><span>Powered by Meridian<span class="six">6</span></span></a>

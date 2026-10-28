@@ -1,5 +1,5 @@
 {
-  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, Dec 2026, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay photo. Pricing/terms are intentionally not on the site. Bays that lease together share a \"unit\" label (e.g. \"F–G\") plus \"size\" and \"sf\"; picking either letter selects the whole unit.",
+  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, Dec 2026, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay photo. Pricing/terms are intentionally not on the site. Bays that lease together share a \"unit\" label (e.g. \"F–G\") plus \"size\" and \"sf\"; picking either letter selects the whole unit. tenant_portal is the Cubby tenant-portal address (https://<name>.cubby.cc/); while it is blank the Tenant portal link is hidden everywhere.",
   "bays": {
     "A": {
       "status": "soon",
@@ -78,6 +78,7 @@
     "title": "Bay H · open now",
     "note": "F–G (1,800 SF) opens December 2026"
   },
+  "tenant_portal": "",
   "existing_businesses": [
     {
       "name": "Kutz Family Hair Care",

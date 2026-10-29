@@ -7,3 +7,16 @@
 - Sister property on the same site: Free State Storage (https://freestatestorage.com) for overflow, inventory, and truck, trailer and equipment parking
 - Leasing inquiries: call (785) 727-2112, email leasing@2400franklin.com, or use the form at https://2400franklin.com/#inquire
 - Availability is listed at https://2400franklin.com/#bays
+
+## Pages
+
+- [Home](https://2400franklin.com/): the bays, who they suit, the neighborhood, FAQ and the inquiry form
+- [Bays and availability](https://2400franklin.com/#bays): which bays are open, opening soon or leased
+- [Questions](https://2400franklin.com/#faq): sizes, what is included, how tours work
+- [Inquire](https://2400franklin.com/#inquire): leasing inquiry form; or call (785) 727-2112
+
+## Related
+
+- [Flint Hills Capital](https://flinthills.capital): owner
+- [Free State Storage](https://freestatestorage.com): storage on the same site
+- [Tenant portal](https://2400franklin.cubby.cc/): current tenants pay rent here

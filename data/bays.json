@@ -82,22 +82,22 @@
   "existing_businesses": [
     {
       "name": "Kutz Family Hair Care",
-      "logo": "/images/tenants/kutz.png",
+      "logo": "/images/tenants/kutz.webp",
       "url": "https://www.facebook.com/kutzlawrence/"
     },
     {
       "name": "Ace Bail Bonds",
-      "logo": "/images/tenants/ace-bail-bonds.png",
+      "logo": "/images/tenants/ace-bail-bonds.webp",
       "url": "https://www.acebailbonds.net/"
     },
     {
       "name": "Ace Interlock",
-      "logo": "/images/tenants/ace-interlock.png",
+      "logo": "/images/tenants/ace-interlock.webp",
       "url": "https://aceinterlock.net/"
     },
     {
       "name": "Custom Windows and Tinting",
-      "logo": "/images/tenants/custom-windows-and-tinting.png",
+      "logo": "/images/tenants/custom-windows-and-tinting.webp",
       "url": "https://www.google.com/search?kgmid=/g/1thr7pmh&q=Custom+Window+Tinting+by+TC"
     }
   ]

@@ -259,6 +259,8 @@ section.alt{background:var(--bg2)}
 .biz a{display:inline-flex;align-items:center;min-height:44px;opacity:.7;transition:opacity .15s}
 .biz a:hover,.biz a:focus-visible{opacity:1}
 .biz img{height:40px;width:auto;filter:grayscale(1)}
+/* phones: 2x2 — Kutz + Interlock on top, Tinting + Bail Bonds below */
+@media (max-width:599px){.biz ul{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;justify-items:center}.biz li:has(img[alt="Kutz Family Hair Care"]){order:1}.biz li:has(img[alt="Ace Interlock"]){order:2}.biz li:has(img[alt="Custom Windows and Tinting"]){order:3}.biz li:has(img[alt="Ace Bail Bonds"]){order:4}}
 .biz li>img{opacity:.7}
 .biz img[alt="Ace Interlock"]{height:34px}.biz img[alt="Kutz Family Hair Care"]{height:30px}.biz img[alt="Ace Bail Bonds"]{height:56px}.biz img[alt="Custom Windows and Tinting"]{height:48px}
 @media (min-width:900px){.biz{padding:28px 0}.biz ul{gap:16px 96px}.biz img{height:46px}.biz img[alt="Ace Interlock"]{height:40px}.biz img[alt="Kutz Family Hair Care"]{height:36px}.biz img[alt="Ace Bail Bonds"]{height:66px}.biz img[alt="Custom Windows and Tinting"]{height:54px}}

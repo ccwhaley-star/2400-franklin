@@ -94,6 +94,10 @@
       "name": "Ace Interlock",
       "logo": "/images/tenants/ace-interlock.png",
       "url": "https://aceinterlock.net/"
+    },
+    {
+      "name": "Custom Windows and Tinting",
+      "logo": "/images/tenants/custom-windows-and-tinting.png"
     }
   ]
 }

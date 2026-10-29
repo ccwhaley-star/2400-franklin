@@ -32,8 +32,9 @@ overlay, detail panel), the "Existing businesses" logo strip, and the phone stic
 - `tenant_portal` is the Cubby tenant-portal address for current bay tenants (pay rent, autopay).
   When set, `build.py` adds a "Tenant portal" link to the desktop nav, an account icon in the phone
   header (hidden under 360 px, where it would push Inquire off screen) and a line in the footer.
-  Blank = hidden. Set to https://2400franklin.cubby.cc/ on 2026-10-28 before Cubby had set that portal up;
-  confirm the address once it exists.
+  Blank = hidden. 2400 Franklin is a facility (permalink facility/2400franklin) inside the same Cubby
+  storefront as Free State Storage, and Cubby gives a storefront ONE tenant portal for all its facilities:
+  https://freestatestorage.cubby.cc/ (2026-10-29). Its sign-in page says "Free State Storage".
 - All other copy (headline, FAQ, neighborhood list) is edited directly in `index.html`. Keep the FAQ
   answers and the `FAQPage` JSON-LD in the `<head>` in sync.
 
@@ -113,7 +114,7 @@ The frontage rendering has its tenant-sign panels blanked; regenerate it before 
       the site; keep name/address identical to the footer and JSON-LD.
 - [ ] Keep "Newly renovated" until renovations are visibly done; switch to "Renovations underway" if
       launching earlier.
-- [ ] Cubby tenant portal for the bays: set `tenant_portal` in `data/bays.json` to its `.cubby.cc` address, run `python build.py`.
+- [x] Cubby tenant portal for the bays: freestatestorage.cubby.cc (shared storefront portal, 2026-10-29).
 - [ ] Cookieless analytics if wanted (Plausible or Cloudflare Web Analytics); none installed.
 
 ## QA notes (2026-10-18)

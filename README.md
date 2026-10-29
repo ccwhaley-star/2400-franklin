@@ -89,6 +89,7 @@ images/            renderings as WebP + JPG at 900 and 1600 wide, og.jpg (1200×
 fonts/             Montserrat variable woff2 (latin), self-hosted
 logo.svg           sign lockup as vector paths (also logo-light.svg, logo-with-url.svg for the sign vendor)
 favicon.svg / favicon.ico / apple-touch-icon.png
+brand/             PNG logo + favicon kit for other services (Cubby portal etc.); build/make_brand_kit.py
 netlify.toml       redirects (www, 2400franklinrd.com) and cache/security headers
 robots.txt, sitemap.xml, llms.txt
 build/shot.py      headless-Chrome screenshot helper used for QA

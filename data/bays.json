@@ -1,5 +1,5 @@
 {
-  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, Dec 2026, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay photo. Pricing/terms are intentionally not on the site. Bays that lease together share a \"unit\" label (e.g. \"F–G\") plus \"size\" and \"sf\"; picking either letter selects the whole unit. tenant_portal is the Cubby tenant-portal address (https://<name>.cubby.cc/); while it is blank the Tenant portal link is hidden everywhere.",
+  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, Dec 2026, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay photo. Pricing/terms are intentionally not on the site. Bays that lease together share a \"unit\" label (e.g. \"F–G\") plus \"size\" and \"sf\"; picking either letter selects the whole unit. tenant_portal is the Cubby tenant-portal address (https://<name>.cubby.cc/); while it is blank the Tenant portal link is hidden everywhere. Availability also syncs hourly from Cubby (build/cubby_sync.py): a bay with a \"cubby\" pricing-group id (or a Cubby space named \"Suite X\") is shown Leased when Cubby says occupied and Open when it is not; soon bays stay soon.",
   "bays": {
     "A": {
       "status": "soon",
@@ -65,6 +65,7 @@
     },
     "H": {
       "status": "available",
+      "cubby": "pg_DZs7biwSa51",
       "tag": "Open",
       "when": "Available now",
       "name": "Front-corner bay",

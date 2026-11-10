@@ -2,6 +2,10 @@
 [build]
   publish = "."
 
+# netlify/functions/submission-created.js copies each inquiry into Cubby (env CUBBY_STOREFRONT_KEY)
+[functions]
+  directory = "netlify/functions"
+
 # www -> apex, and the street-sign spelling -> the real domain
 [[redirects]]
   from = "https://www.2400franklin.com/*"

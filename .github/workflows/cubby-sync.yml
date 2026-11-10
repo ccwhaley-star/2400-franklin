@@ -1,0 +1,42 @@
+# Hourly: pull bay availability from Cubby, rebuild index.html, commit only if something changed.
+# The push to main makes Netlify deploy. Secret CUBBY_STOREFRONT_KEY = the 2400 Franklin storefront key.
+name: Cubby availability sync
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cubby-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # build.py reads logo sizes with Pillow; without it the logo width/height attributes would change
+      - run: pip install --quiet pillow
+      - name: Sync from Cubby
+        env:
+          CUBBY_STOREFRONT_KEY: ${{ secrets.CUBBY_STOREFRONT_KEY }}
+        run: python build/cubby_sync.py
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/bays.json index.html; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "cubby-sync"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bays.json index.html
+          git commit -m "Availability from Cubby"
+          git push

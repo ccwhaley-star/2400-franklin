@@ -37,6 +37,25 @@ overlay, detail panel), the "Existing businesses" logo strip, and the phone stic
 - All other copy (headline, FAQ, neighborhood list) is edited directly in `index.html`. Keep the FAQ
   answers and the `FAQPage` JSON-LD in the `<head>` in sync.
 
+## Cubby (live availability + inquiries)
+
+2400 Franklin has its own Cubby storefront ("2400 Franklin", facility slug `2400-franklin`,
+facility id `fac_UGvL8JM95Z8`). The storefront key is stored as `CUBBY_STOREFRONT_KEY` in
+Netlify (site env) and in GitHub (repo secret). Nothing on the page offers online rental.
+
+- **Availability, hourly:** `.github/workflows/cubby-sync.yml` runs `build/cubby_sync.py`, which
+  reads the facility's spaces from Cubby and updates `data/bays.json` + `index.html`, committing
+  only when something changed (Netlify then deploys). A bay follows Cubby when it has a
+  `"cubby": "pg_…"` id in `bays.json` or Cubby names the space "Suite X" / "Suite F-G".
+  Occupied in Cubby = Leased; not occupied = Open, except "soon" bays stay soon. Bays Cubby
+  does not list keep what `bays.json` says. Run it by hand from GitHub → Actions → Cubby
+  availability sync → Run workflow.
+- **Inquiries:** `netlify/functions/submission-created.js` runs after every non-spam form
+  submission and posts it to Cubby as a contact-form lead (name, email, phone, space needed,
+  business, use). The email notification and the thank-you message do not depend on it;
+  failures show in Netlify → Logs → Functions.
+- **Tenant portal:** https://2400franklin.cubby.cc/ (pay rent), linked in the header and footer.
+
 ## Deploy
 
 ```bash

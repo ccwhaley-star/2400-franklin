@@ -210,17 +210,19 @@ section.alt{background:var(--bg2)}
 .ext-img{position:relative;border-radius:14px;overflow:hidden;background:var(--panel)}
 .ext-img img{display:block;width:100%;height:auto}
 .overlay{position:absolute;inset:0;width:100%;height:100%}
-.overlay .front{fill:rgba(201,168,106,0);stroke:rgba(243,238,228,.55);stroke-width:2.5;stroke-linejoin:round;cursor:pointer;transition:fill .18s,stroke .18s}
-.overlay .pintxt{font-family:var(--serif);font-weight:400;fill:#F3EEE4;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:rgba(15,14,14,.55);stroke-width:6px;stroke-linejoin:round;transition:fill .18s}
-.overlay g:hover .front,.overlay g:focus-visible .front{fill:rgba(201,168,106,.28);stroke:var(--brass);stroke-width:3}
-.overlay g.sel .front{fill:rgba(201,168,106,.42);stroke:var(--brass);stroke-width:4}
-.overlay g.sel .pintxt{fill:#fff;stroke:rgba(15,14,14,.7)}
+.overlay .hit{fill:transparent;cursor:pointer}
+.overlay .front{vector-effect:non-scaling-stroke;fill:rgba(201,168,106,0);stroke:rgba(243,238,228,.55);stroke-width:1.5;stroke-linejoin:round;cursor:pointer;transition:fill .18s,stroke .18s}
+.overlay .pintxt{font-family:var(--serif);font-weight:400;fill:#1E1D1E;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:rgba(255,255,255,.55);stroke-width:8px;stroke-linejoin:round;transition:fill .18s}
+.overlay g:hover .front,.overlay g:focus-visible .front{fill:rgba(201,168,106,.28);stroke:var(--brass);stroke-width:2}
+.overlay g.sel .front{fill:rgba(201,168,106,.42);stroke:var(--brass);stroke-width:2.5}
+.overlay g.sel .pintxt{fill:#000;stroke:rgba(255,255,255,.85)}
 .overlay g.leased .front{fill:rgba(15,14,14,.38);stroke:rgba(243,238,228,.35)}
-.overlay g.leased .pintxt{fill:rgba(243,238,228,.75)}
-.overlay g.open .front{stroke:var(--brass);stroke-width:3}
-.overlay .tag{font-family:var(--sans);font-weight:700;letter-spacing:.18em;text-transform:uppercase;fill:#F3EEE4;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:rgba(15,14,14,.6);stroke-width:4px}
-.overlay g.sel .tag{fill:#fff}
+.overlay g.leased .pintxt{fill:rgba(30,29,30,.5)}
+.overlay g.open .front{stroke:var(--brass);stroke-width:2}
+.overlay .tag{font-family:var(--sans);font-weight:700;letter-spacing:.08em;text-transform:uppercase;fill:#1E1D1E;text-anchor:middle;pointer-events:none;paint-order:stroke;stroke:rgba(255,255,255,.55);stroke-width:5px}
+.overlay g.sel .tag{fill:#000}
 .overlay g:focus{outline:none}
+@media (max-width:599px){.overlay .tag{display:none}}
 .exterior figcaption{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--muted);margin-top:10px}
 .panel{background:var(--ivory);color:#151312;border-radius:14px;padding:22px 20px 20px}
 .panel .pbay{font-family:var(--serif);font-weight:300;font-size:44px;line-height:1;margin:0 0 6px;color:#151312}
@@ -243,7 +245,10 @@ section.alt{background:var(--bg2)}
 .prow .btn.ghost{color:#151312!important;border-color:#151312!important;background:transparent}
 @media (min-width:900px){
   .chooser-head .tiles{max-width:720px}
-  .chooser-grid{grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+  .chooser-grid{gap:24px}
+  /* the building is a wide strip, so it runs full width; the panel sits under it in two columns */
+  .panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:36px;padding:28px 28px 26px}
+  .panel>*{grid-column:1}.panel .pprev{grid-column:2;grid-row:1 / span 6;margin:0;align-self:start}
   .tiles button{min-height:52px;font-size:22px}
 }
 @media (max-width:599px){.tiles{grid-template-columns:repeat(4,1fr)}.tiles button{min-height:48px}}
@@ -485,8 +490,8 @@ nav.desk .portal{padding-left:22px;border-left:1px solid rgba(243,238,228,.25)}
         <div class="chooser-grid">
           <figure class="exterior">
             <div class="ext-img">
-              <picture><source type="image/avif" srcset="/images/frontage-700.avif 700w, /images/frontage-900.avif 900w, /images/frontage-1600.avif 1502w" sizes="(min-width: 900px) 740px, 100vw"><img src="/images/frontage-900.webp" srcset="/images/frontage-700.webp 700w, /images/frontage-900.webp 900w, /images/frontage-1600.webp 1502w" sizes="(min-width: 900px) 740px, 100vw" width="1502" height="1047" loading="lazy" decoding="async" alt="Rendering of the renovated building on Franklin Road: eight storefront entries A to H, the tall flex suite at the left end"></picture>
-              <svg class="overlay" viewBox="0 0 1502 1047" aria-hidden="true" focusable="false" id="overlay"></svg>
+              <picture><source type="image/avif" srcset="/images/frontage-v2-700.avif 700w, /images/frontage-v2-900.avif 900w, /images/frontage-v2-1600.avif 1600w, /images/frontage-v2-2000.avif 2000w" sizes="(min-width: 900px) 740px, 100vw"><img src="/images/frontage-v2-900.webp" srcset="/images/frontage-v2-700.webp 700w, /images/frontage-v2-900.webp 900w, /images/frontage-v2-1600.webp 1600w, /images/frontage-v2-2000.webp 2000w" sizes="(min-width: 900px) 740px, 100vw" width="2000" height="667" loading="lazy" decoding="async" alt="Rendering of the renovated building on Franklin Road at dusk: white siding over a dark stone base, eight storefront doors A to H, the tall flex suite at the left end"></picture>
+              <svg class="overlay" viewBox="0 0 2000 667" aria-hidden="true" focusable="false" id="overlay"></svg>
             </div>
             <figcaption>Tap a letter or a storefront · rendering; renovation begins October 2026</figcaption>
           </figure>
@@ -683,19 +688,15 @@ nav.desk .portal{padding-left:22px;border-left:1px solid rgba(243,238,228,.25)}
   /* mezz: only bays with the double-height mezzanine layout show the mezzanine amenity + interior preview.
      Owner to confirm which bays have it; Bay A is the tall flex suite in the spec. */
   var BAYS=JSON.parse(document.getElementById('bay-data').textContent);
-  /* full facade of each bay as a polygon in the frontage rendering's own pixels (1502 × 1047).
-     Edges run between the storefronts; the top follows the parapet, the bottom the wainscot. A is the tall end unit. */
-  var TOP=[[460,189.5],[1348,376.3]], BOT=[[460,515],[700,495],[1000,482],[1300,468],[1348,466]];   /* roofline measured from the rendering's pixels, 2026-10-19 */
-  function at(line,x){for(var i=1;i<line.length;i++){if(x<=line[i][0]){var a=line[i-1],b=line[i];return a[1]+(b[1]-a[1])*(x-a[0])/(b[0]-a[0])}}return line[line.length-1][1]}
-  var EDGES={A:[0,460],B:[460,800],C:[800,1012],D:[1012,1130],E:[1130,1205],F:[1205,1258],G:[1258,1309],H:[1309,1348]};
+  /* each bay in the frontage rendering's own pixels (2000 × 667, front-on, 2026-11-22).
+     A bay = window, door, window; edges sit in the wall between those groups (measured from the
+     rendering's pixels). A is the tall end unit. The letter and status sit in the sky above each bay;
+     the tap area is the whole column so it stays big enough on a phone. */
+  var EDGES={A:[20,328],B:[328,577],C:[577,825],D:[825,1065],E:[1065,1303],F:[1303,1545],G:[1545,1769],H:[1769,1961]};
   var GEO={};
   Object.keys(EDGES).forEach(function(id){
-    var x0=EDGES[id][0],x1=EDGES[id][1],pts;
-    if(id==='A'){pts=[[0,15],[458,130],[458,515],[0,540]]}
-    else{pts=[[x0,at(TOP,x0)],[x1,at(TOP,x1)],[x1,at(BOT,x1)],[x0,at(BOT,x0)]]}
-    var cx=(x0+x1)/2, cy=(at(id==='A'?[[0,15],[458,130]]:TOP,cx)+at(id==='A'?[[0,540],[458,515]]:BOT,cx))/2;
-    var size=Math.max(26,Math.min(96,(x1-x0)*0.42));
-    GEO[id]={pts:pts,cx:cx,cy:id==='A'?300:(0.1055*cx+267.1)+size*0.55,size:size};
+    var x0=EDGES[id][0],x1=EDGES[id][1],top=id==='A'?358:402,bot=590;
+    GEO[id]={x0:x0,x1:x1,pts:[[x0,top],[x1,top],[x1,bot],[x0,bot]],cx:(x0+x1)/2,cy:id==='A'?190:200,size:130,tagSize:30};
   });
   var ICON={
     mezz:'<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M3 20h22M6 20v-8h16v8M6 12l4-5h8l4 5M11 20v-4h6v4"/></svg>',
@@ -713,9 +714,10 @@ nav.desk .portal{padding-left:22px;border-left:1px solid rgba(243,238,228,.25)}
   var ov=$('overlay');
   ORDER.forEach(function(id){
     var o=GEO[id], g=el('g',{'data-bay':id,class:BAYS[id].s});  /* pointer only; the tiles above are the keyboard/screen-reader control */
+    g.appendChild(el('rect',{class:'hit',x:o.x0,y:0,width:o.x1-o.x0,height:667}));
     g.appendChild(el('polygon',{class:'front',points:o.pts.map(function(p){return p.join(',')}).join(' ')}));
     var t=el('text',{class:'pintxt',x:o.cx,y:o.cy+o.size*0.36,'font-size':o.size}); t.textContent=id; g.appendChild(t);
-    var tag=el('text',{class:'tag',x:o.cx,y:o.cy+o.size*0.36+Math.max(12,o.size*0.32),'font-size':Math.max(9,o.size*0.2)}); tag.textContent=BAYS[id].tag; g.appendChild(tag);
+    var tag=el('text',{class:'tag',x:o.cx,y:o.cy+o.size*0.36+o.tagSize*1.5,'font-size':o.tagSize}); tag.textContent=BAYS[id].tag; g.appendChild(tag);
     ov.appendChild(g);
   });
   document.querySelectorAll('.tiles button').forEach(function(b){var st=BAYS[b.getAttribute('data-bay')].s;b.classList.add(st);b.insertAdjacentHTML('beforeend','<small>'+BAYS[b.getAttribute('data-bay')].tag+'</small>')});

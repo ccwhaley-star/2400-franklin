@@ -115,7 +115,7 @@ build/shot.py      headless-Chrome screenshot helper used for QA
 ```
 
 All three building images are AI renderings of planned improvements and are captioned "(rendering)".
-The frontage rendering has its tenant-sign panels blanked; regenerate it before using it anywhere else.
+The bay chooser uses `images/frontage-v2-*` (owner's front-on dusk rendering of the real building, 2026-11-22; Shoji White over a Caviar base). Bay edges in the chooser script are measured from that image's pixels; redo them if the image changes.
 
 ## Launch checklist (owner)
 
@@ -126,7 +126,6 @@ The frontage rendering has its tenant-sign panels blanked; regenerate it before 
       LocalBusiness JSON-LD, a tap-to-call button, and hours in the Inquire section.
 - [ ] Kutz Family Hair Care logo → `images/tenants/kutz.png`, then set `logo` in `data/bays.json`.
       Confirm all three businesses are OK being shown.
-- [ ] Regenerate `frontage.jpg` with clean sign panels (not currently on the page).
 - [ ] Sign vendor: `logo-with-url.svg` has the URL as the third line of the lockup. Swap in the sign's
       exact font if it is not Montserrat.
 - [ ] Google Business Profile for 2400 Franklin (separate phone line from Free State Storage); link

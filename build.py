@@ -28,6 +28,8 @@ for letter, b in data["bays"].items():
     for extra in ("unit", "size", "sf"):          # bays that lease together as one unit
         if b.get(extra):
             bays[letter][extra] = b[extra]
+    if b.get("photo"):                            # a real photo: images/<file>-900 and -1445 (.avif + .webp)
+        bays[letter]["photo"] = b["photo"]
 baydata = ('<script type="application/json" id="bay-data">'
            + json.dumps(bays, ensure_ascii=False).replace("</", "<\\/") + "</script>")
 

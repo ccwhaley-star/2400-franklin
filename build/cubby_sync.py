@@ -69,8 +69,10 @@ def sticky(bays):
             open_now.append(lab)
         if b["status"] == "soon" and lab not in [s[0] for s in soon]:
             soon.append((lab, b))
-    if open_now:
-        title = (" and ".join(open_now)) + " · open now"
+    if len(open_now) > 1:                                  # "Bays F–G and H · open now"
+        title = "Bays " + " and ".join(l.split(" ", 1)[1] for l in open_now) + " · open now"
+    elif open_now:
+        title = open_now[0] + " · open now"
     else:
         title = "Ask about the next bay"
     note = ""

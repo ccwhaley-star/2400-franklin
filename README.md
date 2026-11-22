@@ -24,10 +24,10 @@ overlay, detail panel), the "Existing businesses" logo strip, and the phone stic
 `index.html` and push.
 
 - Each bay has `status` (`available`, `soon`, `leased`), a short `tag` shown under the letter
-  (`Open`, `Dec 2026`, `Leased`), a longer `when` for the detail panel, a `name`, a `blurb`, and
+  (`Open`, `2027`, `Leased`), a longer `when` for the detail panel, a `name`, a `blurb`, and
   `mezzanine`. Only bays with `mezzanine: true` show the mezzanine office and the flex-suite photo.
 - Bays that lease together (F and G today) share a `unit` label plus `size` and `sf`; picking either letter on the site selects the whole unit and the panel shows the combined size.
-- `sticky_bar` is the line on the phone bar ("Bay H · open now / F and G open December 2026").
+- `sticky_bar` is the line on the phone bar ("Bays F–G and H · open now / Bay A opens Spring 2027").
 - Tenant logos go in `images/tenants/` and are listed under `existing_businesses` with a link.
 - `tenant_portal` is the Cubby tenant-portal address for current bay tenants (pay rent, autopay).
   When set, `build.py` adds a "Tenant portal" link to the desktop nav, an account icon in the phone

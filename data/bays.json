@@ -1,5 +1,5 @@
 {
-  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, Dec 2026, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay rendering. A bay with \"photo\": {\"file\": \"bay-h\", \"alt\": \"...\"} shows that real photo instead (images/<file>-900 and -1445, each as .avif and .webp). Pricing/terms are intentionally not on the site. Bays that lease together share a \"unit\" label (e.g. \"F–G\") plus \"size\" and \"sf\"; picking either letter selects the whole unit. tenant_portal is the Cubby tenant-portal address (https://<name>.cubby.cc/); while it is blank the Tenant portal link is hidden everywhere. Availability also syncs hourly from Cubby (build/cubby_sync.py): a bay with a \"cubby\" pricing-group id (or a Cubby space named \"Suite X\") is shown Leased when Cubby says occupied and Open when it is not; soon bays stay soon.",
+  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, 2027, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay rendering. A bay with \"photo\": {\"file\": \"bay-h\", \"alt\": \"...\"} shows that real photo instead (images/<file>-900 and -1445, each as .avif and .webp). Pricing/terms are intentionally not on the site. Bays that lease together share a \"unit\" label (e.g. \"F–G\") plus \"size\" and \"sf\"; picking either letter selects the whole unit. tenant_portal is the Cubby tenant-portal address (https://<name>.cubby.cc/); while it is blank the Tenant portal link is hidden everywhere. Availability also syncs hourly from Cubby (build/cubby_sync.py): a bay with a \"cubby\" pricing-group id (or a Cubby space named \"Suite X\") is shown Leased when Cubby says occupied and Open when it is not; soon bays stay soon.",
   "bays": {
     "A": {
       "status": "soon",
@@ -42,23 +42,23 @@
       "blurb": "Leased as a single 900 SF bay."
     },
     "F": {
-      "status": "soon",
-      "tag": "Dec 2026",
-      "when": "December 2026 · one unit",
+      "status": "available",
+      "tag": "Open",
+      "when": "Available now · one unit",
       "name": "Bays F–G",
       "mezzanine": false,
-      "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side: full-height shop floor, private restroom, roll-up doors at the back and storefront entry on Franklin Road. Opens December 2026.",
+      "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side and fully renovated: full-height shop floor, private restroom, roll-up doors at the back and storefront entry on Franklin Road.",
       "unit": "F–G",
       "size": "60 × 30 ft",
       "sf": "1,800 SF"
     },
     "G": {
-      "status": "soon",
-      "tag": "Dec 2026",
-      "when": "December 2026 · one unit",
+      "status": "available",
+      "tag": "Open",
+      "when": "Available now · one unit",
       "name": "Bays F–G",
       "mezzanine": false,
-      "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side: full-height shop floor, private restroom, roll-up doors at the back and storefront entry on Franklin Road. Opens December 2026.",
+      "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side and fully renovated: full-height shop floor, private restroom, roll-up doors at the back and storefront entry on Franklin Road.",
       "unit": "F–G",
       "size": "60 × 30 ft",
       "sf": "1,800 SF"
@@ -80,8 +80,8 @@
     }
   },
   "sticky_bar": {
-    "title": "Bay H · open now",
-    "note": "F–G (1,800 SF) opens December 2026"
+    "title": "Bays F–G and H · open now",
+    "note": "Bay A opens Spring 2027"
   },
   "tenant_portal": "https://2400franklin.cubby.cc/",
   "existing_businesses": [

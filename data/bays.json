@@ -98,6 +98,11 @@
       "rollup": false,
       "photos": [
         {
+          "file": "bay-h-staged",
+          "alt": "Bay H virtually staged as a design showroom: sample shelves, a meeting table, a desk by the window and a seating corner",
+          "note": "furnished photo virtually staged"
+        },
+        {
           "file": "bay-h-room",
           "alt": "Photo of Bay H: carpeted front room with LED ceiling lights, looking out the storefront door to Franklin Road"
         }

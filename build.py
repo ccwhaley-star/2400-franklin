@@ -28,8 +28,19 @@ for letter, b in data["bays"].items():
     for extra in ("unit", "size", "sf"):          # bays that lease together as one unit
         if b.get(extra):
             bays[letter][extra] = b[extra]
-    if b.get("photo"):                            # a real photo: images/<file>-900 and -1445 (.avif + .webp)
-        bays[letter]["photo"] = b["photo"]
+    if b.get("rollup") is False:                  # Bay H: no rear roll-up door
+        bays[letter]["rollup"] = False
+    photos = []
+    for ph in b.get("photos") or []:              # real photos: images/<file>-900 and -1445 (.avif + .webp)
+        try:
+            from PIL import Image
+            with Image.open(HERE / "images" / f'{ph["file"]}-1445.webp') as im:
+                w, h = im.size
+        except FileNotFoundError:
+            sys.exit(f'bay {letter}: images/{ph["file"]}-1445.webp is missing')
+        photos.append({**ph, "w": w, "h": h})
+    if photos:
+        bays[letter]["photos"] = photos
 baydata = ('<script type="application/json" id="bay-data">'
            + json.dumps(bays, ensure_ascii=False).replace("</", "<\\/") + "</script>")
 

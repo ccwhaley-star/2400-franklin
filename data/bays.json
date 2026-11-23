@@ -1,5 +1,5 @@
 {
-  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, 2027, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay rendering. A bay with \"photo\": {\"file\": \"bay-h\", \"alt\": \"...\"} shows that real photo instead (images/<file>-900 and -1445, each as .avif and .webp). Pricing/terms are intentionally not on the site. Bays that lease together share a \"unit\" label (e.g. \"F–G\") plus \"size\" and \"sf\"; picking either letter selects the whole unit. tenant_portal is the Cubby tenant-portal address (https://<name>.cubby.cc/); while it is blank the Tenant portal link is hidden everywhere. Availability also syncs hourly from Cubby (build/cubby_sync.py): a bay with a \"cubby\" pricing-group id (or a Cubby space named \"Suite X\") is shown Leased when Cubby says occupied and Open when it is not; soon bays stay soon.",
+  "_how_to_update": "Edit this file, then run `python build.py` from the site folder and commit index.html. status is one of: available, soon, leased. tag is the short word under the letter on the tiles and the building (e.g. Open, 2027, Leased). when is the longer status shown on the detail panel. Only bays with mezzanine: true show the mezzanine office and the flex-suite photo; the rest show the standard-bay rendering. A bay with \"photos\": [{\"file\": \"bay-h\", \"alt\": \"...\", \"note\": \"optional caption words\"}] shows those real photos instead (images/<file>-900 and -1445, each as .avif and .webp). \"rollup\": false hides the Rear roll-up door line (Bay H). Pricing/terms are intentionally not on the site. Bays that lease together share a \"unit\" label (e.g. \"F–G\") plus \"size\" and \"sf\"; picking either letter selects the whole unit. tenant_portal is the Cubby tenant-portal address (https://<name>.cubby.cc/); while it is blank the Tenant portal link is hidden everywhere. Availability also syncs hourly from Cubby (build/cubby_sync.py): a bay with a \"cubby\" pricing-group id (or a Cubby space named \"Suite X\") is shown Leased when Cubby says occupied and Open when it is not; soon bays stay soon.",
   "bays": {
     "A": {
       "status": "soon",
@@ -50,7 +50,18 @@
       "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side and fully renovated: full-height shop floor, private restroom, roll-up doors at the back and storefront entry on Franklin Road.",
       "unit": "F–G",
       "size": "60 × 30 ft",
-      "sf": "1,800 SF"
+      "sf": "1,800 SF",
+      "photos": [
+        {
+          "file": "bays-fg-rear",
+          "alt": "Photo of Bays F and G from the back lot at dusk, both roll-up doors open onto the lit shop floors",
+          "note": "new paint shown"
+        },
+        {
+          "file": "bays-fg-inside",
+          "alt": "Photo inside Bays F–G: open concrete shop floor, steel beams, ducted heat and two roll-up doors"
+        }
+      ]
     },
     "G": {
       "status": "available",
@@ -61,7 +72,18 @@
       "blurb": "Bays F and G lease together as one 1,800 SF unit, side by side and fully renovated: full-height shop floor, private restroom, roll-up doors at the back and storefront entry on Franklin Road.",
       "unit": "F–G",
       "size": "60 × 30 ft",
-      "sf": "1,800 SF"
+      "sf": "1,800 SF",
+      "photos": [
+        {
+          "file": "bays-fg-rear",
+          "alt": "Photo of Bays F and G from the back lot at dusk, both roll-up doors open onto the lit shop floors",
+          "note": "new paint shown"
+        },
+        {
+          "file": "bays-fg-inside",
+          "alt": "Photo inside Bays F–G: open concrete shop floor, steel beams, ducted heat and two roll-up doors"
+        }
+      ]
     },
     "H": {
       "status": "available",
@@ -70,13 +92,16 @@
       "when": "Available now",
       "name": "Front-corner bay",
       "mezzanine": false,
-      "blurb": "The corner on Franklin Road, 18 ft wide by 30 ft deep (540 SF). Full-height shop floor and private restroom. Roll-up door at the back.",
+      "blurb": "The corner on Franklin Road, 18 ft wide by 30 ft deep (540 SF). A finished front room: carpet, drop ceiling with LED lighting, windows on two sides, storefront entry and private restroom. No roll-up door.",
       "size": "18 × 30 ft",
       "sf": "540 SF",
-      "photo": {
-        "file": "bay-h",
-        "alt": "Photo of Bay H: carpeted front room with LED ceiling lights, looking out the storefront door to Franklin Road"
-      }
+      "rollup": false,
+      "photos": [
+        {
+          "file": "bay-h",
+          "alt": "Photo of Bay H: carpeted front room with LED ceiling lights, looking out the storefront door to Franklin Road"
+        }
+      ]
     }
   },
   "sticky_bar": {

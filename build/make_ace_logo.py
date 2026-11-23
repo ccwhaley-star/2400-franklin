@@ -4,7 +4,7 @@
 import pathlib
 from PIL import Image, ImageDraw, ImageFont
 P = pathlib.Path(__file__).resolve().parent.parent
-INK = (11, 15, 28, 255)
+INK = (255, 255, 255, 255)                            # white, like the other logos on the dark strip
 F = pathlib.Path(r"C:\Windows\Fonts")
 cap = 120                                              # cap height of BAIL BONDS, px
 bold = ImageFont.truetype(str(F / "arialbd.ttf"), round(cap / 0.716))

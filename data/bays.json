@@ -98,7 +98,7 @@
       "rollup": false,
       "photos": [
         {
-          "file": "bay-h",
+          "file": "bay-h-carpet",
           "alt": "Photo of Bay H: carpeted front room with LED ceiling lights, looking out the storefront door to Franklin Road"
         }
       ]
@@ -117,7 +117,7 @@
     },
     {
       "name": "Ace Bail Bonds",
-      "logo": "/images/tenants/ace-bail-bonds.webp",
+      "logo": "/images/tenants/ace-bail-bonds-logo.webp",
       "url": "https://www.acebailbonds.net/"
     },
     {
